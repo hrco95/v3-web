@@ -1,15 +1,295 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V3 — Stambena gradnja | Bjelovar · Kraljevica</title>
+  <meta name="description" content="V3 d.o.o. gradi stambene zgrade u kojima svaki kvadrat vrijedi. Aktualni projekti: Vlahe Bukovca u Bjelovaru i Regina u Kraljevici.">
+  <meta property="og:title" content="V3 — Stambena gradnja">
+  <meta property="og:description" content="Gradimo stambene prostore u kojima svaki kvadrat vrijedi.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1 id="pozdrav">Hello World</h1>
-    <button id="gumb">Klikni me</button>
+<body data-page="home">
 
-    <script src="script.js"></script>
+  <a class="skip-link" href="#main">Preskoči na sadržaj</a>
+
+  <header class="site-head">
+    <div class="wrap site-head__in">
+      <a class="brand" href="index.html">V3<i></i><small data-i18n="brand.tag">gradnja</small></a>
+      <nav class="site-nav" aria-label="Glavna navigacija">
+        <a href="#projekti" data-i18n="nav.projects">Projekti</a>
+        <a href="#o-nama" data-i18n="nav.about">O nama</a>
+        <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Jezik / Language">
+        <button type="button" data-lang="hr">HR</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="de">DE</button>
+      </div>
+      <button class="menu-btn" aria-expanded="false" aria-label="Izbornik">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-overlay">
+    <nav aria-label="Mobilna navigacija">
+      <a href="#projekti" data-i18n="nav.projects">Projekti</a>
+      <a href="#o-nama" data-i18n="nav.about">O nama</a>
+      <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Jezik / Language">
+      <button type="button" data-lang="hr">HR</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="de">DE</button>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Stambena gradnja · Bjelovar — Kraljevica</p>
+        <h1 class="hero-title" data-i18n="hero.title">Svaki kvadrat <em>vrijedi.</em></h1>
+        <div class="hero-foot">
+          <p class="hero-sub" data-i18n="hero.sub">V3 projektira i gradi stambene zgrade u kojima je svaki kvadrat promišljeno iskorišten. Kvaliteta ispred kvantitete — od prve skice do primopredaje ključeva.</p>
+          <div class="hero-cta">
+            <a class="btn btn--solid" href="#projekti"><span data-i18n="hero.ctaProjects">Pogledaj projekte</span><span class="arr">→</span></a>
+            <a class="btn btn--ghost" href="#kontakt"><span data-i18n="hero.ctaContact">Kontaktirajte nas</span></a>
+          </div>
+        </div>
+        <figure class="hero-visual">
+          <img src="assets/img/hero-home.svg" alt="Ilustracija projekata V3 — obiteljska kuća i stambena zgrada" width="1600" height="686">
+        </figure>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span data-i18n="marquee">Svaki kvadrat vrijedi</span>
+          <span data-i18n="marquee">Svaki kvadrat vrijedi</span>
+          <span data-i18n="marquee">Svaki kvadrat vrijedi</span>
+          <span data-i18n="marquee">Svaki kvadrat vrijedi</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJEKTI ============ -->
+    <section id="projekti">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow" data-i18n="home.projectsEyebrow">01 · Projekti</p>
+            <h2 data-i18n="home.projectsTitle">Dva projekta. <em>Jedna filozofija.</em></h2>
+          </div>
+          <p class="section-note" data-i18n="home.projectsNote">Boutique zgrade s malim brojem stanova, promišljeni tlocrti i lokacije provjerene svakodnevnim životom.</p>
+        </div>
+
+        <div class="project-list">
+
+          <article class="project-card" data-reveal>
+            <a class="project-card__media" href="vlahe-bukovca.html" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/bjelovar-hero.svg" alt="" loading="lazy" width="1200" height="900">
+              <span class="project-card__num">01</span>
+            </a>
+            <div class="project-card__body">
+              <p class="project-card__city" data-i18n="proj.bjelovar.city">Bjelovar · Ulica Vlahe Bukovca</p>
+              <h3>Vlahe Bukovca</h3>
+              <span class="badge badge--info" data-i18n="status.prep">U pripremi</span>
+              <p data-i18n="proj.bjelovar.blurb">Boutique stambena zgrada s dvije stambene jedinice u mirnoj slijepoj ulici. Svaki stan ima dva parkirna mjesta i pripadajući dio vrta, a škola, vrtić i svi sadržaji nalaze se unutar jednog kilometra.</p>
+              <ul class="project-card__facts">
+                <li data-i18n="proj.bjelovar.f1">2 stana</li>
+                <li data-i18n="proj.bjelovar.f2">57,21 m²</li>
+                <li data-i18n="proj.bjelovar.f3">2 parkirna mjesta po stanu</li>
+                <li data-i18n="proj.bjelovar.f4">Pripadajući vrt</li>
+              </ul>
+              <a class="btn" href="vlahe-bukovca.html"><span data-i18n="proj.view">Pogledaj projekt</span><span class="arr">→</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <a class="project-card__media" href="regina.html" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/regina-hero.svg" alt="" loading="lazy" width="1200" height="900">
+              <span class="project-card__num">02</span>
+            </a>
+            <div class="project-card__body">
+              <p class="project-card__city" data-i18n="proj.regina.city">Kraljevica · Strossmayerova ulica</p>
+              <h3>Regina</h3>
+              <span class="badge badge--info" data-i18n="status.prep">U pripremi</span>
+              <p data-i18n="proj.regina.blurb">Šest stanova s pogledom na more, po dva na etaži, iznad suterena s garažom i ostavama. Jugozapadna orijentacija, a svi sadržaji Kraljevice na 500 metara.</p>
+              <ul class="project-card__facts">
+                <li data-i18n="proj.regina.f1">6 stanova</li>
+                <li data-i18n="proj.regina.f2">≈ 57 m²</li>
+                <li data-i18n="proj.regina.f3">Pogled na more</li>
+                <li data-i18n="proj.regina.f4">Garaža + ostava</li>
+              </ul>
+              <a class="btn" href="regina.html"><span data-i18n="proj.view">Pogledaj projekt</span><span class="arr">→</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ O NAMA ============ -->
+    <section id="o-nama" class="about">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow" data-i18n="home.aboutEyebrow">02 · O nama</p>
+            <h2 data-i18n="home.aboutTitle">Kvaliteta ispred <em>kvantitete.</em></h2>
+          </div>
+        </div>
+
+        <p class="about-lead" data-reveal data-i18n="about.lead">Vjerujemo da svaki kvadrat vrijedi — zato projektiramo stanove bez izgubljenih hodnika i mrtvih kutova, samo s prostorom koji svakodnevno radi za vas.</p>
+
+        <div class="about-cols" data-reveal>
+          <p data-i18n="about.p1">V3 d.o.o. građevinska je tvrtka specijalizirana za gradnju stambenih i nestambenih zgrada. Gradimo boutique projekte s malim brojem stambenih jedinica, jer nam takav opseg omogućuje potpunu kontrolu kvalitete — od izbora materijala do posljednjeg detalja završnih radova.</p>
+          <p data-i18n="about.p2">Svaki naš tlocrt nastaje s istim ciljem: maksimalna iskoristivost svakog kvadrata. Stan od 57 m² može živjeti kao znatno veći — ako je svaki metar na svom mjestu.</p>
+        </div>
+
+        <div class="about-grid" data-reveal-stagger>
+          <article>
+            <span class="idx">01</span>
+            <h3 data-i18n="about.v1t">Promišljeni tlocrti</h3>
+            <p data-i18n="about.v1d">Arhitektonska rješenja u kojima svaka prostorija ima svrhu, a prostor prati stvarne navike stanovanja.</p>
+          </article>
+          <article>
+            <span class="idx">02</span>
+            <h3 data-i18n="about.v2t">Kvaliteta gradnje</h3>
+            <p data-i18n="about.v2d">Provjereni materijali, suvremena tehnička rješenja i nadzor u svim fazama — gradimo kao da gradimo za sebe.</p>
+          </article>
+          <article>
+            <span class="idx">03</span>
+            <h3 data-i18n="about.v3t">Lokacije za život</h3>
+            <p data-i18n="about.v3d">Mirne ulice, blizina sadržaja i dobra povezanost — biramo lokacije koje svaki dan štede vrijeme.</p>
+          </article>
+        </div>
+
+        <div class="stats" data-reveal>
+          <article><span class="n" data-i18n="about.s1n">2</span><p data-i18n="about.s1l">aktivna projekta</p></article>
+          <article><span class="n" data-i18n="about.s2n">8</span><p data-i18n="about.s2l">stambenih jedinica</p></article>
+          <article><span class="n" data-i18n="about.s3n">2027</span><p data-i18n="about.s3l">prva useljenja</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KONTAKT ============ -->
+    <section id="kontakt">
+      <div class="wrap contact-grid">
+        <div class="contact-info" data-reveal>
+          <p class="eyebrow" data-i18n="home.contactEyebrow">03 · Kontakt</p>
+          <h2 data-i18n="home.contactTitle">Razgovarajmo o <em>vašem novom domu.</em></h2>
+          <p data-i18n="home.contactLead">Zanima vas stan, termin razgovora ili detalj projekta? Javite nam se — odgovaramo brzo i konkretno.</p>
+          <dl class="contact-list">
+            <div><dt data-i18n="info.company">Tvrtka</dt><dd>V3 d.o.o.</dd></div>
+            <div><dt data-i18n="info.address">Adresa</dt><dd data-i18n="info.hq">Bjelovarska ulica 22, 43212 Rovišće</dd></div>
+            <div><dt data-i18n="info.oib">OIB</dt><dd>75358597096</dd></div>
+            <div><dt data-i18n="info.email">E-mail</dt><dd><a data-email href="#">info@v3-gradnja.hr</a></dd></div>
+          </dl>
+        </div>
+
+        <form class="form" data-form data-reveal>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-name" data-i18n="form.name">Ime i prezime</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email" data-i18n="form.email">E-mail adresa</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-phone" data-i18n="form.phone">Telefon (neobavezno)</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="f-project" data-i18n="form.project">Projekt koji vas zanima</label>
+              <select id="f-project" name="project">
+                <option value="general" data-i18n="form.optGeneral">Općenit upit</option>
+                <option value="bjelovar" data-i18n="form.optBjelovar">Vlahe Bukovca — Bjelovar</option>
+                <option value="regina" data-i18n="form.optRegina">Regina — Kraljevica</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg" data-i18n="form.message">Poruka</label>
+            <textarea id="f-msg" name="message" rows="5"></textarea>
+          </div>
+          <div class="form-foot">
+            <p class="form-note" data-i18n="form.note">Slanjem se otvara vaš e-mail program s pripremljenim upitom.</p>
+            <button class="btn btn--solid" type="submit"><span data-i18n="form.send">Pošalji upit</span><span class="arr">→</span></button>
+          </div>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-cta">
+        <div>
+          <p class="eyebrow" data-i18n="footer.ctaEyebrow">Imate pitanje?</p>
+          <h2 data-i18n="footer.ctaTitle">Pronađimo <em>vaš kvadrat.</em></h2>
+        </div>
+        <a class="btn" href="#kontakt"><span data-i18n="footer.ctaBtn">Pošalji upit</span><span class="arr">→</span></a>
+      </div>
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="index.html">V3<i></i><small data-i18n="brand.tag">gradnja</small></a>
+          <p class="muted" style="margin-top:1rem; max-width:26ch;" data-i18n="footer.tag">Gradimo stambene prostore u kojima svaki kvadrat vrijedi.</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.colNav">Navigacija</h4>
+          <ul>
+            <li><a href="#projekti" data-i18n="nav.projects">Projekti</a></li>
+            <li><a href="#o-nama" data-i18n="nav.about">O nama</a></li>
+            <li><a href="#kontakt" data-i18n="nav.contact">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.colProjects">Projekti</h4>
+          <ul>
+            <li><a href="vlahe-bukovca.html">Vlahe Bukovca</a></li>
+            <li><a href="regina.html">Regina</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.colContact">Kontakt</h4>
+          <ul>
+            <li>V3 d.o.o.</li>
+            <li class="muted" data-i18n="info.hq">Bjelovarska ulica 22, 43212 Rovišće</li>
+            <li class="muted">OIB 75358597096</li>
+            <li><a data-email href="#">info@v3-gradnja.hr</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-legal">
+        <span>© <span data-year>2026</span> V3 d.o.o. · <span data-i18n="footer.rights">Sva prava pridržana.</span></span>
+        <span data-i18n="footer.disclaimer">Prikazani sadržaji informativnog su karaktera i ne predstavljaju ponudu u pravnom smislu.</span>
+      </div>
+      <div class="foot-mark" aria-hidden="true">V3</div>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Povratak na vrh">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="data/i18n.js"></script>
+  <script src="data/availability.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/floorplan.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
