@@ -40,6 +40,10 @@ h1 em, h2 em { color: var(--gold); font-weight: 400; }
 .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-top: 48px; }
 .intro, .section-content > p { max-width: 54ch; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.8; }
 .hero-bottom .intro { max-width: 48ch; }
+.project-about { max-width: 64ch; }
+.project-about h2 { font-size: 36px; margin-bottom: 20px; }
+.project-about .intro { max-width: none; }
+.project-about .intro + .intro { margin-top: 16px; }
 .button { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 28px; padding: 18px 28px; border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .button:hover { background: var(--gold); border-color: var(--gold); }
 .button span { font-size: 18px; line-height: 1; }
