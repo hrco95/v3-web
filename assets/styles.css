@@ -127,3 +127,7 @@ figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap
   .project-card { flex-direction: column; align-items: flex-start; padding: 24px; }
   .floor-plan { padding: 12px; }
 }
+
+/* Poveznica na tehnički nacrt */
+.source-plan-link { margin: 20px 0 0; font-size: 17px; font-weight: 600; }
+.source-plan-link a { display: inline-block; padding-block: 8px; color: var(--gold); }
