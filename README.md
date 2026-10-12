@@ -32,3 +32,7 @@ Otvoriti http://127.0.0.1:8080. Hosting treba posluživati sadržaj foldera `web
 - Provjeriti brzinu i prijaviti sitemap u Google Search Console.
 
 Aktualni prikazi tlocrta: `assets/images/stan-1-azurirano.png` i `stan-2-azurirano.png`, kopirani bez izmjena iz korisnikovih datoteka u `output/tlocrti/`. Izvorni WebP nacrti ostaju dostupni zasebnim poveznicama radi svih kota i oznaka.
+
+## Predmemorija
+
+Cloudflare `_headers` postavlja `Cache-Control: no-cache`: spremljeni sadržaj mora se provjeriti prije ponovnog korištenja. CSS i ažurirani tlocrti u HTML-u imaju `?v=` s prvih 10 znakova SHA-256 sadržaja. Pri izmjeni tih datoteka ažurirati verziju u svim njihovim HTML poveznicama (uključujući uvećanje slika). Time se zaobilaze ranije spremljene kopije bez ručnog brisanja cachea.
