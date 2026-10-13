@@ -49,6 +49,47 @@ h1 em, h2 em { color: var(--gold); font-weight: 400; }
 .button span { font-size: 18px; line-height: 1; }
 
 /* Sadržaj i podnožje */
+/* Početna: odabrani raspored s pročeljem desno. */
+.home-hero { position: relative; display: grid; grid-template-columns: 44% 56%; align-items: center; min-height: 660px; padding-block: 60px; }
+.home-hero-copy { position: relative; z-index: 1; }
+.home-hero h1 { font-size: clamp(64px, 7.5vw, 108px); }
+.home-hero .intro { max-width: 34ch; margin: 28px 0; font-size: 15px; }
+.home-hero .home-hero-image { position: absolute; width: 72%; right: -3%; top: 50%; transform: translateY(-50%); margin: 0; }
+.home-highlights { display: flex; justify-content: space-between; gap: 24px; margin: 0; padding: 28px 0 40px; border-top: 1px solid var(--line); }
+.home-highlights dd { color: var(--gold); }
+@media (max-width: 800px) {
+  .home-hero { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding: 24px 0 12px; }
+  .home-hero .eyebrow { font-size: 10px; gap: 12px; margin-bottom: 24px; }
+  .home-hero h1 { font-size: clamp(60px, 15vw, 84px); }
+  .home-hero .intro { max-width: 42ch; margin: 24px 0; font-size: 15px; line-height: 1.7; }
+  .home-hero .home-hero-image { position: relative; width: 100%; right: auto; top: auto; transform: none; margin: 24px 0 0; }
+  .home-highlights { flex-wrap: wrap; gap: 24px 32px; padding-block: 24px 32px; }
+  .home-highlights dt { font-size: 10px; }
+  .home-highlights dd { font-size: 24px; }
+}
+@media (max-width: 720px) {
+  .home-hero .home-hero-image { width: calc(100% + 40px); margin-inline: -20px; }
+}
+.building-visual { position: relative; isolation: isolate; margin: 0 0 80px; }
+.building-visual img { display: block; width: 100%; height: auto; }
+.building-visual::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, var(--paper), transparent 12%, transparent 74%, var(--paper)),
+    linear-gradient(to right, var(--paper), transparent 10%, transparent 90%, var(--paper));
+}
+.building-visual--project { margin: 48px 0 0; }
+.home-hero .home-hero-image::after { inset: 0; background: linear-gradient(90deg, var(--paper), transparent 30%, transparent 94%, var(--paper)), linear-gradient(0deg, var(--paper), transparent 22%, transparent 87%, var(--paper)); }
+@media (max-width: 800px) {
+  .home-hero .home-hero-image::after { background: linear-gradient(0deg, var(--paper), transparent 22%, transparent 88%, var(--paper)), linear-gradient(90deg, var(--paper), transparent 7%, transparent 93%, var(--paper)); }
+}
+@media (max-width: 720px) {
+  .building-visual { margin-bottom: 48px; }
+  .building-visual--project { margin: 32px 0 0; }
+}
 .section { display: grid; grid-template-columns: 1fr 2fr; align-items: start; gap: 48px; border-top: 1px solid var(--line); padding-block: 80px; scroll-margin-top: 32px; }
 .section > .eyebrow { margin-top: 12px; }
 .section-content { min-width: 0; }
