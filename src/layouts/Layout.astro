@@ -1,0 +1,60 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import facade from '../assets/procelje-neutralno-3072.jpg';
+import { apartments } from '../data/apartments';
+
+interface Props { title: string; description: string; project?: boolean; noindex?: boolean }
+const { title, description, project = false, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = await getImage({ src: facade, width: 1200, format: 'jpg', quality: 85 });
+const imageUrl = new URL(socialImage.src, Astro.site);
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': `${Astro.site}#organization`, name: 'V3', url: Astro.site, email: 'info@v-3.hr', telephone: '+385981609794' },
+    { '@type': 'WebSite', '@id': `${Astro.site}#website`, name: 'V3', url: Astro.site, inLanguage: 'hr' },
+    ...(project ? [{ '@type': 'ApartmentComplex', name: 'Projekt ul. Vlahe Bukovca', url: canonical,
+      address: { '@type': 'PostalAddress', streetAddress: 'Ulica Vlahe Bukovca', addressLocality: 'Bjelovar', addressCountry: 'HR' },
+      containsPlace: apartments.map((a) => ({ '@type': 'Apartment', name: `Stan ${a.id}`, url: `${canonical}#stan-${a.id}`, numberOfBedrooms: 2,
+        floorSize: { '@type': 'QuantitativeValue', value: Number(a.area.replace(',', '.')), unitCode: 'MTK' } })) }] : []),
+  ],
+};
+---
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <meta name="theme-color" content="#f8f5ee" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="hr_HR" />
+    <meta property="og:site_name" content="V3" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="Vizualizacija zgrade u Ulici Vlahe Bukovca u Bjelovaru" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
+  </head>
+  <body>
+    <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+    <Header />
+    <main id="sadrzaj" class="container"><slot /></main>
+    <Footer />
+  </body>
+</html>

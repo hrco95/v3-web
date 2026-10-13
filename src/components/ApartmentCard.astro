@@ -1,0 +1,41 @@
+---
+import { Picture } from 'astro:assets';
+import plan1 from '../assets/stan-1-azurirano.png';
+import plan2 from '../assets/stan-2-azurirano.png';
+import type { Apartment } from '../data/apartments';
+
+interface Props { apartment: Apartment }
+const { apartment: a } = Astro.props;
+const plan = a.id === 1 ? plan1 : plan2;
+const fullPlan = `/assets/images/stan-${a.id}-azurirano.png`;
+---
+<article id={`stan-${a.id}`} class="apartment" aria-labelledby={`stan-${a.id}-naslov`}>
+  <header class="apartment-header">
+    <div><p class="eyebrow">{a.floor} · 2 spavaće sobe</p><h2 id={`stan-${a.id}-naslov`}>Stan <em>{a.id}.</em></h2></div>
+    <p class="area">{a.area} <span>m² neto</span></p>
+  </header>
+  <div class="apartment-grid">
+    <div>
+      <p class="apartment-intro">Dvije spavaće sobe, povezan dnevni prostor s kuhinjom i blagovaonicom te izlaz na lođu.</p>
+      <table>
+        <caption>Površine prostorija — stan {a.id}</caption>
+        <thead><tr><th scope="col">Prostorija</th><th scope="col">Površina</th></tr></thead>
+        <tbody>{a.rooms.map((room) => <tr><th scope="row"><span class="room-number">{room.number}</span>{room.name}</th><td>{room.area} m²</td></tr>)}</tbody>
+        <tfoot><tr><th scope="row">Ukupna neto površina</th><td>{a.area} m²</td></tr></tfoot>
+      </table>
+      <p class="parking">2 vanjska parkirna mjesta</p>
+      <p class="note">Lođa ima 9,55 m²; u ukupnu površinu uključena je s koeficijentom 0,75 (7,16 m²).</p>
+    </div>
+    <div>
+      <figure class="floor-plan">
+        <div class="plan-heading"><span>Tlocrt stana {a.id}</span><span>Raspored i površine</span></div>
+        <a class="plan-image" href={fullPlan} target="_blank" rel="noopener" aria-label={`Otvori uvećani tlocrt stana ${a.id} u novoj kartici`}>
+          <Picture src={plan} formats={['webp']} fallbackFormat="png" widths={[480, 768, 1120]} sizes="(max-width: 600px) 90vw, 560px" quality={95} loading="lazy" decoding="async" alt={`Tlocrt stana ${a.id}, ${a.floor}: raspored prostorija s nazivima i površinama.`} />
+        </a>
+        <figcaption><span>Stan {a.id} · {a.floor}</span><a href={fullPlan} target="_blank" rel="noopener">Uvećaj tlocrt ↗</a></figcaption>
+      </figure>
+      <p class="source-plan-link"><a href={`/assets/images/stan-${a.id}.webp`} target="_blank" rel="noopener">Izvorni nacrt s kotama i oznakama ↗</a></p>
+      <address class="plan-contact"><span>Upit za stan {a.id} · Luka</span><a href="mailto:info@v-3.hr">info@v-3.hr</a><a href="tel:+385981609794">098 160 9794</a></address>
+    </div>
+  </div>
+</article>
