@@ -67,11 +67,11 @@ h1 em, h2 em { color: var(--gold); font-weight: 400; }
 
 /* Sadržaj i podnožje */
 /* Početna: odabrani raspored s pročeljem desno. */
-.home-hero { position: relative; display: grid; grid-template-columns: 44% 56%; align-items: center; min-height: 660px; padding-block: 60px; }
-.home-hero-copy { position: relative; z-index: 1; }
+.home-hero { position: relative; display: grid; grid-template-columns: 44% 56%; align-items: center; min-height: 720px; padding-block: 60px; }
+.home-hero-copy { position: relative; z-index: 1; max-width: 440px; }
 .home-hero h1 { font-size: clamp(64px, 7.5vw, 108px); }
 .home-hero .intro { max-width: 34ch; margin: 28px 0; font-size: 15px; }
-.home-hero .home-hero-image { position: absolute; width: 72%; right: -3%; top: 50%; transform: translateY(-50%); margin: 0; }
+.home-hero .home-hero-image { position: absolute; width: 76%; right: -3%; top: 50%; transform: translateY(-50%); margin: 0; }
 .home-highlights { display: flex; justify-content: space-between; gap: 24px; margin: 0; padding: 28px 0 40px; border-top: 1px solid var(--line); }
 .home-highlights dd { color: var(--gold); }
 @media (max-width: 800px) {
@@ -79,7 +79,8 @@ h1 em, h2 em { color: var(--gold); font-weight: 400; }
   .home-hero .eyebrow { font-size: 10px; gap: 12px; margin-bottom: 24px; }
   .home-hero h1 { font-size: clamp(60px, 15vw, 84px); }
   .home-hero .intro { max-width: 42ch; margin: 24px 0; font-size: 15px; line-height: 1.7; }
-  .home-hero .home-hero-image { position: relative; width: 100%; right: auto; top: auto; transform: none; margin: 24px 0 0; }
+  .home-hero-copy { max-width: none; }
+  .home-hero .home-hero-image { position: relative; width: calc(100% + 40px); right: auto; top: auto; transform: none; margin: 16px -20px 0; }
   .home-highlights { flex-wrap: wrap; gap: 24px 32px; padding-block: 24px 32px; }
   .home-highlights dt { font-size: 10px; }
   .home-highlights dd { font-size: 24px; }
@@ -98,9 +99,10 @@ h1 em, h2 em { color: var(--gold); font-weight: 400; }
     linear-gradient(to bottom, var(--paper), transparent 12%, transparent 74%, var(--paper)),
     linear-gradient(to right, var(--paper), transparent 10%, transparent 90%, var(--paper));
 }
-.home-hero .home-hero-image::after { inset: 0; background: linear-gradient(90deg, var(--paper), transparent 30%, transparent 94%, var(--paper)), linear-gradient(0deg, var(--paper), transparent 22%, transparent 87%, var(--paper)); }
+.home-hero .home-hero-image img { mask-image: linear-gradient(0deg, transparent, black 3%, black 97%, transparent); }
+.home-hero .home-hero-image::after { inset: 0; background: linear-gradient(90deg, var(--paper), transparent 24%, transparent 96%, var(--paper)), linear-gradient(0deg, var(--paper), transparent 18%, transparent 84%, var(--paper)); }
 @media (max-width: 800px) {
-  .home-hero .home-hero-image::after { background: linear-gradient(0deg, var(--paper), transparent 22%, transparent 88%, var(--paper)), linear-gradient(90deg, var(--paper), transparent 7%, transparent 93%, var(--paper)); }
+  .home-hero .home-hero-image::after { background: linear-gradient(0deg, var(--paper), transparent 16%, transparent 88%, var(--paper)), linear-gradient(90deg, var(--paper), transparent 5%, transparent 95%, var(--paper)); }
 }
 @media (max-width: 720px) {
   .building-visual { margin-bottom: 48px; }
