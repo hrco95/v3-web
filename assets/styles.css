@@ -40,14 +40,27 @@ h1 em, h2 em { color: var(--gold); font-weight: 400; }
 .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-top: 48px; }
 .intro, .section-content > p { max-width: 54ch; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.8; }
 .hero-bottom .intro { max-width: 48ch; }
-.project-about { max-width: 64ch; }
-.project-about h2 { font-size: 36px; margin-bottom: 20px; }
-.project-about .intro { max-width: none; }
-.project-about .intro + .intro { margin-top: 16px; }
 .hero.project-hero { padding-block: 32px 48px; }
 .project-hero h1 { font-size: clamp(32px, 4vw, 52px); letter-spacing: -0.035em; }
-.project-hero .eyebrow { margin-bottom: 16px; }
+.project-location { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding-block: 8px; color: var(--muted); font-size: 13px; text-decoration: none; }
+.project-location svg { flex-shrink: 0; color: var(--gold); }
+.project-location:hover { color: var(--gold); text-decoration: underline; }
 .project-hero .hero-bottom { margin-top: 32px; }
+.project-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 40px; margin: 40px 0 0; }
+.project-facts > div { min-width: 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.project-facts dd { color: var(--gold); font-size: clamp(24px, 2.5vw, 32px); line-height: 1.25; }
+.project-facts dd span { display: inline-block; white-space: nowrap; }
+.project-facts .fact-note { margin: 8px 0 0; color: var(--muted); font: 13px/1.6 Arial, Helvetica, sans-serif; }
+.project-distances { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 32px 0 0; color: var(--muted); font-size: 13px; }
+.project-distances span + span::before { content: '·'; margin-right: 24px; color: var(--gold); }
+@media (max-width: 800px) {
+  .project-hero .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .project-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; margin-top: 32px; }
+  .project-facts dt { font-size: 10px; letter-spacing: 0.04em; }
+  .project-facts dd { font-size: 24px; }
+  .project-distances { flex-direction: column; }
+  .project-distances span + span::before { content: none; }
+}
 .button { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 28px; padding: 18px 28px; border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .button:hover { background: var(--gold); border-color: var(--gold); }
 .button span { font-size: 18px; line-height: 1; }
