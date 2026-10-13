@@ -44,6 +44,10 @@ h1 em, h2 em { color: var(--gold); font-weight: 400; }
 .project-about h2 { font-size: 36px; margin-bottom: 20px; }
 .project-about .intro { max-width: none; }
 .project-about .intro + .intro { margin-top: 16px; }
+.hero.project-hero { padding-block: 32px 48px; }
+.project-hero h1 { font-size: clamp(32px, 4vw, 52px); letter-spacing: -0.035em; }
+.project-hero .eyebrow { margin-bottom: 16px; }
+.project-hero .hero-bottom { margin-top: 32px; }
 .button { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 28px; padding: 18px 28px; border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .button:hover { background: var(--gold); border-color: var(--gold); }
 .button span { font-size: 18px; line-height: 1; }
@@ -81,14 +85,12 @@ h1 em, h2 em { color: var(--gold); font-weight: 400; }
     linear-gradient(to bottom, var(--paper), transparent 12%, transparent 74%, var(--paper)),
     linear-gradient(to right, var(--paper), transparent 10%, transparent 90%, var(--paper));
 }
-.building-visual--project { margin: 48px 0 0; }
 .home-hero .home-hero-image::after { inset: 0; background: linear-gradient(90deg, var(--paper), transparent 30%, transparent 94%, var(--paper)), linear-gradient(0deg, var(--paper), transparent 22%, transparent 87%, var(--paper)); }
 @media (max-width: 800px) {
   .home-hero .home-hero-image::after { background: linear-gradient(0deg, var(--paper), transparent 22%, transparent 88%, var(--paper)), linear-gradient(90deg, var(--paper), transparent 7%, transparent 93%, var(--paper)); }
 }
 @media (max-width: 720px) {
   .building-visual { margin-bottom: 48px; }
-  .building-visual--project { margin: 32px 0 0; }
 }
 .section { display: grid; grid-template-columns: 1fr 2fr; align-items: start; gap: 48px; border-top: 1px solid var(--line); padding-block: 80px; scroll-margin-top: 32px; }
 .section > .eyebrow { margin-top: 12px; }
